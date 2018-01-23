@@ -1,0 +1,38 @@
+<div class="ui-g">
+	<div class="ui-g-8">
+		<p class="splash-text">
+			This project demonstrates how to use an Ethereum Smart Contract to manage earnest money agreements associated with 
+			real estate transactions. When a property buyer enters into a real estate contract, the realtor typically requests 
+			a sum of money be deposited in <i>good faith</i> (usually 1% of the sales price) to help convince the seller that 
+			the buyer is serious about the purchase. Currently, this process is accomplished by executing the following tasks:
+		</p>
+		<ol>
+			<li class="splash-text">The buyer writes a check to the realtor.</li>
+			<li class="splash-text">The realtor holds the check until the seller agrees to the terms of the real estate contract.</li>
+			<li class="splash-text">The realtor deposits the check into a bank account.</li>
+			<li class="splash-text">The realtor writes a check to the closing agent (i.e. an attorney) and brings it to closing.</li>
+			<li class="splash-text">The closing agent deposits the check into a bank account.</li>
+		</ol>
+
+		<p class="splash-text">
+			If, for some reason, the real estate contract becomes invalid, the realtor needs to refund the buyer's money either 
+			by returning the buyer's check or by issuing a new check to the buyer. This process is labor intensive and time consuming.
+		</p>
+		<p class="splash-text">
+			The manual movement of writing and depositing checks is replaced with an Ethereum smart contract implementing the following functions:
+		</p>
+		<ul>
+			<li class="splash-text"><b>register</b> -  A realtor registers a new earnest money agreement. A stipend is paid to the contract owner as a usage fee. Ether is taken from the realtor's account and transferred to the contract owner's account.</li>
+			<li class="splash-text"><b>deposit</b> - A property buyer deposits funds. Ether is taken from the buyer's account and transferred to the smart contract balance.</li>
+			<li class="splash-text"><b>release</b> - A realtor releases funds to the closing agent. Ether is transferred from the contract balance to the closing agent's account.</li>
+			<li class="splash-text"><b>refund</b> - A realtor returns funds to the buyer. Ether is transferred from the contract balance to the buyer's account.</li>
+			<li class="splash-text"><b>cancel</b>- A realtor cancels an earnest money agreement after funds are either released or refunded.</li>
+			<li class="splash-text"><b>status</b> - Allows a realtor or buyer to check the current status of an earnest money agreement.</li>
+		</ul>
+		<p class="splash-text">
+			Each earnest money agreement is identified by a unique string using the UUID format. 
+			This string identifies an earnest money agreement to the outside world. 
+			It is generated internally during the registration process.
+		</p>
+	</div>
+</div>

@@ -1,0 +1,68 @@
+<p-growl [(value)]="msgs" [sticky]="false"></p-growl>
+<div class="ui-g">
+	<div class="ui-g-12"><h2 class="release-text">Realtor Release Funds to Closing Agent</h2></div>
+	<div class="ui-g-8">
+		<p-panel [showHeader]="false">
+			<div class="ui-g">
+
+				<div class="ui-g-2"><label for="realtor">Realtor Account</label></div>
+				<div class="ui-g-1"><input id="realtor" type="text" size="50" pInputText [(ngModel)]="inpRealtorAccount"/></div>
+				<div class="ui-g-9"></div>
+
+				<div class="ui-g-2"><label for="uuid">Agreement ID</label></div>
+				<div class="ui-g-1"><input id="uuid" type="text" size="50" pInputText [(ngModel)]="inpUuid"/></div>
+				<div class="ui-g-9"></div>
+				
+				<div class="ui-g-2"><label for="cagent">Closing Agent Account</label></div>
+				<div class="ui-g-1"><input id="cagent" type="text" size="50" pInputText [(ngModel)]="inpClosingAgentAccount"/></div>
+				<div class="ui-g-9"></div>
+			
+				<div class="ui-g-2"></div>
+				<div class="ui-g-2"><button pButton type="button" (click)="releaseFunds();" label="Release"></button></div>
+				<div class="ui-g-8"></div>
+			</div>
+		</p-panel>
+	</div>
+	<div class="ui-g-4"></div>
+</div>
+
+<div class="ui-g" *ngIf="showSpinner">
+	<div class="ui-g-5"></div>
+	<div class="ui-g-2">
+		<p-progressSpinner [style]="{width: '50px', height: '50px'}" strokeWidth="8" fill="#EEEEEE" animationDuration=".5s"></p-progressSpinner>
+	</div>
+	<div class="ui-g-5"></div>
+</div>
+
+<div class="ui-g" *ngIf="showPanel">
+	<div class="ui-g-8">
+		<p-panel [showHeader]="false">
+			<div class="ui-g">
+  				<div class="ui-g-12"><h3>Funds Released to Closing Agent</h3></div>
+  				
+				<div class="ui-g-2">Agreement ID: </div>
+				<div class="ui-g-4">{{ _uuid }}</div>
+				<div class="ui-g-6"></div>
+				
+				<div class="ui-g-2">Buyer Address: </div>
+				<div class="ui-g-4">{{ _buyer }}</div>
+				<div class="ui-g-6"></div>
+				
+				<div class="ui-g-2">Realtor Address: </div>
+				<div class="ui-g-4">{{ _realtor }}</div>
+				<div class="ui-g-6"></div>
+				
+				<div class="ui-g-2">Closing Agent Address: </div>
+				<div class="ui-g-4">{{ _closingAgent }}</div>
+				<div class="ui-g-6"></div>
+				
+				<div class="ui-g-2">Agreement Amount: </div>
+				<div class="ui-g-4">{{ _amount }}</div>
+				<div class="ui-g-6"></div>
+
+			</div>
+		</p-panel>
+	</div>
+	<div class="ui-g-4"></div>
+</div>
+

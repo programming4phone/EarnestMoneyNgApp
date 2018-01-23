@@ -1,0 +1,64 @@
+<p-growl [(value)]="msgs" [sticky]="false"></p-growl>
+<div class="ui-g">
+	<div class="ui-g-12"><h3 class="admin-text">Admin Status</h3></div>
+	<div class="ui-g-8">
+		<p-panel header="Get User Account Balance">
+			<div class="ui-g">
+				
+				<div class="ui-g-2"><label for="admin1">Admin Account</label></div>
+				<div class="ui-g-1"><input id="admin1" type="text" size="50" pInputText [(ngModel)]="inpAdminAccount1"/></div>
+				<div class="ui-g-9"></div>
+
+				<div class="ui-g-2"><label for="uuid">User Account</label></div>
+				<div class="ui-g-1"><input id="uuid" type="text" pInputText size="50" [(ngModel)]="inpUserAccount"/></div>
+				<div class="ui-g-9"></div>
+			
+				<div class="ui-g-2"></div>
+				<div class="ui-g-2"><button pButton type="button" (click)="getUserAccountBalance();" label="Get Account Balance"></button></div>
+				<div class="ui-g-8"></div>
+			</div>
+		</p-panel>
+	</div>
+  <div class="ui-g-4"></div>
+  
+	<div class="ui-g-8">
+		<p-panel header="Get Contract Balance">
+			<div class="ui-g">
+				
+				<div class="ui-g-2"><label for="admin2">Admin Account</label></div>
+				<div class="ui-g-1"><input id="admin2" type="text" size="50" pInputText [(ngModel)]="inpAdminAccount2"/></div>
+				<div class="ui-g-9"></div>
+
+				<div class="ui-g-2"></div>
+				<div class="ui-g-2"><button pButton type="button" (click)="getContractBalance();" label="Get Contract Balance"></button></div>
+				<div class="ui-g-8"></div>
+			</div>
+		</p-panel>
+	</div>
+	<div class="ui-g-4"></div>
+
+</div>
+
+<div class="ui-g" *ngIf="showSpinner">
+	<div class="ui-g-5"></div>
+	<div class="ui-g-2">
+		<p-progressSpinner [style]="{width: '50px', height: '50px'}" strokeWidth="8" fill="#EEEEEE" animationDuration=".5s"></p-progressSpinner>
+	</div>
+	<div class="ui-g-5"></div>
+</div>
+
+<div class="ui-g" *ngIf="showPanel">
+	<div class="ui-g-8">
+		<p-panel [showHeader]="false">
+			<div class="ui-g">
+				<div class="ui-g-12"><h3>Balance</h3></div>
+				
+				<div class="ui-g-2">Balance: </div>
+				<div class="ui-g-2">{{ _balance }}</div>
+				<div class="ui-g-8"></div>
+
+			</div>
+		</p-panel>
+	</div>
+	<div class="ui-g-4"></div>
+</div>
