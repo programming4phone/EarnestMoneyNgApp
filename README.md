@@ -11,9 +11,9 @@ contract address in the file `environment.ts` needs to be changed.
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-The app needs to be run in either Firefox or Chrome with the [MetaMask] (https://metamask.io/ "MetaMask") add-on installed.
+The app needs to be run in either Firefox or Chrome with the MetaMask add-on installed. See <https://metamask.io/>. 
 
-The smart contract was developed/tested using Truffle and Ganache so [further configuration of MetaMask] (http://truffleframework.com/docs/advanced/truffle-with-metamask "Truffle with MetaMask") is needed.
+The smart contract was developed/tested using Truffle and Ganache so further configuration of MetaMask is needed. See <http://truffleframework.com/docs/advanced/truffle-with-metamask>.
 Once complete, use MetaMask to create 4 new accounts, one for each of the following: owner, realtor, buyer, and closing agent. The owner should be the account used to migrate the contract to the test environment.
 As you test, you will need to switch accounts in MetaMask as needed.
 
